@@ -10,19 +10,21 @@ function pigLatin(word){
   }
 
 
-    var firstPartWord = firstPart(word);
-    var newWord = word.replace(firstPartWord,"") + firstPartWord + "ay";
-    return newWord;
+    var RestWordFirstPart = RestWordAndFirstPart(word);
+    return RestWordFirstPart + "ay";
+
 
 
 }
 
-function firstPart(word){
-  var newWord = word + "firstpart";
+function RestWordAndFirstPart(word){
   for(i = 0; i < word.length; i++){
     for(j = 0; j < vowels.length; j++){
-      if(word[i].toLowerCase() === vowels[j].toLowerCase()){
-        return word.slice(0,i);
+      if(word[i] === vowels[j].toLowerCase()){
+        var firstPart = word.slice(0, i);
+        var restWord = word.slice(i, word.length);
+        var newWord = restWord + firstPart;
+        return newWord;
       }
     }
   }
@@ -36,3 +38,4 @@ console.log(pigLatin('egg'), 'eggyay');
 console.log(pigLatin('emission'), 'emissionyay');
 console.log(pigLatin('heLlo'), 'ellohay');
 console.log(pigLatin('RoCkEt'), 'ocketray');
+console.log(pigLatin('otter'));
