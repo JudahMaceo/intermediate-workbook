@@ -2,8 +2,9 @@ var vowels = ['A', 'E', 'I', 'O', 'U', 'Y'];
 
 
 function pigLatin(word){
+  var word = word.toLowerCase();
   for(k = 0; k < vowels.length; k++){
-    if(word[0].toLowerCase() === vowels[k].toLowerCase()){
+    if(word[0] === vowels[k].toLowerCase()){
       return(word + "yay");
     }
   }
@@ -11,7 +12,7 @@ function pigLatin(word){
 
     var firstPartWord = firstPart(word);
     var newWord = word.replace(firstPartWord,"") + firstPartWord + "ay";
-    return newWord.toLowerCase();
+    return newWord;
 
 
 }
