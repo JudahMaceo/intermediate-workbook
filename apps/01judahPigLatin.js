@@ -2,17 +2,17 @@ var vowels = ['A', 'E', 'I', 'O', 'U', 'Y'];
 
 
 function pigLatin(word){
-  for(j = 0; j < vowels.length; j++){
-    if(word[0].toLowerCase() === vowels[j].toLowerCase()){
-      return word.toLowerCase() + 'yay';
-    }
-    else{
-      var firstPartWord = firstPart(word);
-      var newWord = word.replace(firstPartWord,"") + firstPartWord + "ay";
-      return newWord;
-
+  for(k = 0; k < vowels.length; k++){
+    if(word[0].toLowerCase() === vowels[k].toLowerCase()){
+      return(word + "yay");
     }
   }
+
+
+    var firstPartWord = firstPart(word);
+    var newWord = word.replace(firstPartWord,"") + firstPartWord + "ay";
+    return newWord.toLowerCase();
+
 
 }
 
@@ -32,6 +32,6 @@ console.log(pigLatin('dog'), 'ogday');
 console.log(pigLatin('create'), 'eatecray');
 console.log(pigLatin('valley'), 'alleyvay');
 console.log(pigLatin('egg'), 'eggyay');
-// console.log(pigLatin('emission'), 'emissionyay');
-// console.log(pigLatin('heLlo'), 'ellohay');
-// console.log(pigLatin('RoCkEt'), 'ocketray');
+console.log(pigLatin('emission'), 'emissionyay');
+console.log(pigLatin('heLlo'), 'ellohay');
+console.log(pigLatin('RoCkEt'), 'ocketray');
